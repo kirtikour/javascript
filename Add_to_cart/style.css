@@ -1,0 +1,252 @@
+.container {
+  width: 900px;
+  max-width: 90vw;
+  margin: auto;
+  text-align: center;
+  padding-top: 10px;
+  transition: transform 0.5s;
+}
+svg {
+  width: 30px;
+}
+header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+.iconmain {
+  position: relative;
+  cursor: pointer;
+}
+
+.iconmain span {
+  display: flex;
+  width: 25px;
+  height: 25px;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+  color: aliceblue;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  right: -50%;
+}
+img {
+  width: 150px;
+  height: 150px;
+  filter: drop-shadow(0 15px 15px rgb(121, 119, 119));
+}
+.listproduct {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  justify-content: space-evenly;
+  width: 800px; /* Adjusted width to accommodate the cart */
+  height: auto;
+}
+.items {
+  width: 150px;
+  height: fit-content;
+  margin: 10px;
+  margin-top: 50px;
+  background-color: #fff;
+  padding: 10px;
+
+  border-radius: 8px;
+  background: linear-gradient(145deg, #b5b9bf, #d7dbe3);
+  box-shadow: 10px 10px 26px #5c5e62, -10px -10px 26px #ffffff;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 15px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: rgba(12, 12, 12, 0.062);
+  transition: 0.5s;
+}
+
+button svg {
+  color: #fff;
+}
+.cart-tab {
+  width: 350px;
+  background-color: #5c5e62;
+  color: #d7dbe3;
+  position: fixed;
+  inset: 0 -400px 0 auto;
+  display: grid;
+  grid-template-rows: 60px 1fr 100px;
+  transition: 0.5s;
+}
+
+.cart-tab h1 {
+  padding: 20px;
+  margin: 0;
+  font-weight: 300;
+}
+.cart-tab .btn {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  margin-bottom: 2px;
+}
+.btn p {
+  margin: 5px 0px 1px;
+  background-color: #414243;
+  color: #b5b9bf;
+  font-size: 15px;
+  padding: 15px;
+}
+
+.button-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.cart-tab .btn button {
+  background-color: black;
+  color: #d7dbe3;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  border-radius: 2px;
+}
+.cart-tab .listcart .item img {
+  width: 100%;
+  height: 100%;
+}
+.cart-tab .listcart .item {
+  display: grid;
+  grid-template-columns: 60px 100px 40px 1fr 40px;
+  gap: 3px;
+  text-align: center;
+  align-items: center;
+  margin-left: 0;
+}
+.listcart .quantity span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #d7dbe3;
+  color: #121314;
+  border-radius: 50%;
+  cursor: pointer;
+  text-decoration: none;
+  margin-left: 2px;
+}
+.listcart .quantity span.num {
+  background-color: transparent;
+  color: #fff;
+  cursor: default;
+}
+.listcart .item:nth-child(even) {
+  background-color: #414243;
+}
+.listcart {
+  overflow: auto;
+}
+
+.heading2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.heading2 h1 {
+  margin: 0; /* Remove default margin */
+}
+
+.heading2 span {
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.heading2 span:hover {
+  transform: rotate(360deg);
+}
+.showcart .cart-tab {
+  position: fixed;
+  top: 0;
+  right: 0;
+  /* inset: 0 0 0 auto; */
+}
+
+.showcart .container {
+  transform: translateX(-150px);
+}
+.removeicon {
+  cursor: pointer;
+}
+/* Apply pointer-events: all; to the SVG element */
+.svg-icon {
+  pointer-events: all;
+}
+.removeicon {
+  width: 40px;
+  height: 40px;
+  border-radius: 90%;
+  background-color: transparent;
+  border: none;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  position: relative;
+  gap: 2px;
+}
+
+.svgIcon {
+  width: 12px;
+  transition-duration: 0.3s;
+}
+
+.svgIcon path {
+  fill: white;
+}
+
+.removeicon:hover {
+  transition-duration: 0.3s;
+  background-color: black;
+  align-items: center;
+  gap: 0;
+}
+
+.bin-top {
+  transform-origin: bottom right;
+}
+.removeicon:hover .bin-top {
+  transition-duration: 0.3s;
+  transform: rotate(160deg);
+}
+
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(36, 36, 37) rgb(88, 85, 85);
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgb(90, 89, 87);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(42, 42, 44);
+  border-radius: 20px;
+  border: 3px solid rgb(137, 136, 136);
+}
