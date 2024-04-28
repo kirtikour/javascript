@@ -1,1 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="">
+    <!-- <div class="cart" id="cart"></div> -->
+    <div class="container">
+      <header>
+        <div class="heading">PRODUCT LIST</div>
+        <div class="iconmain">
+          <?xml version="1.0" encoding="UTF-8"?>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            id="Layer_1"
+            data-name="Layer 1"
+            viewBox="0 0 24 24"
+            width="30px"
+            height="30px"
+          >
+            <path
+              d="M3.69,7H0v-2H3.45l.24,2ZM0,13v2H4.63l-.24-2H0Zm3.92-4H0v2H4.16l-.24-2Zm17.67,6H8.65l.13,1.12c.06,.5,.49,.88,.99,.88h11.22v2H9.78c-1.52,0-2.8-1.14-2.98-2.65L5.21,2.88c-.06-.5-.49-.88-.99-.88H2V0h2.22c1.52,0,2.8,1.14,2.98,2.65l.04,.35H23.99l-2.4,12Zm-12.59,5c-1.1,0-2,.9-2,2s.9,2,2,2,2-.9,2-2-.9-2-2-2Zm9,0c-1.1,0-2,.9-2,2s.9,2,2,2,2-.9,2-2-.9-2-2-2Z"
+            />
+          </svg>
+          <span class="itemsincart">0</span>
+        </div>
+      </header>
+
+      <div class="listproduct">
+        <div class="items" id="1">
+          <img
+            src="https://www.at-home.co.in/cdn/shop/products/FIACCARLESONSFACBW.jpg?v=1653041232"
+          />
+          <h4>CHAIR WOOD</h4>
+          <div class="price">200$</div>
+          <button onclick="added()" class="icon">
+            <?xml version="1.0" encoding="UTF-8"?>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              id="Layer_1"
+              data-name="Layer 1"
+              viewBox="0 0 24 24"
+              width="30px"
+              height="30px"
+            >
+              <path
+                d="M3.69,7H0v-2H3.45l.24,2ZM0,13v2H4.63l-.24-2H0Zm3.92-4H0v2H4.16l-.24-2Zm17.67,6H8.65l.13,1.12c.06,.5,.49,.88,.99,.88h11.22v2H9.78c-1.52,0-2.8-1.14-2.98-2.65L5.21,2.88c-.06-.5-.49-.88-.99-.88H2V0h2.22c1.52,0,2.8,1.14,2.98,2.65l.04,.35H23.99l-2.4,12Zm-12.59,5c-1.1,0-2,.9-2,2s.9,2,2,2,2-.9,2-2-.9-2-2-2Zm9,0c-1.1,0-2,.9-2,2s.9,2,2,2,2-.9,2-2-.9-2-2-2Z"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div class="items" id="2">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjnVCZWQp8jkIdDqXH5NdoicoXjnDCHNWSjTLmZGUUMw&s"
+          />
+          <h4>MODREN CHAIR</h4>
+          <div class="price">400$</div>
+          <button class="icon">
+            <?xml version="1.0" encoding="UTF-8"?>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              id="Layer_1"
+              data-name="Layer 1"
+              viewBox="0 0 24 24"
+              width="30px"
+              height="30px"
+            >
+              <path
+                d="M3.69,7H0v-2H3.45l.24,2ZM0,13v2H4.63l-.24-2H0Zm3.92-4H0v2H4.16l-.24-2Zm17.67,6H8.65l.13,1.12c.06,.5,.49,.88,.99,.88h11.22v2H9.78c-1.52,0-2.8-1.14-2.98-2.65L5.21,2.88c-.06-.5-.49-.88-.99-.88H2V0h2.22c1.52,0,2.8,1.14,2.98,2.65l.04,.35H23.99l-2.4,12Zm-12.59,5c-1.1,0-2,.9-2,2s.9,2,2,2,2-.9,2-2-.9-2-2-2Zm9,0c-1.1,0-2,.9-2,2s.9,2,2,2,2-.9,2-2-.9-2-2-2Z"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div class="items" id="3">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkNwUbq0Y0Q5OpmBzb7QYTpXfmwCFD31atqS5jt62xQA&s"
+          />
+          <h4>CHAIR PLASTIC</h4>
+          <div class="price">300$</div>
+          <button class="icon">
+            <?xml version="1.0" encoding="UTF-8"?>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              id="Layer_1"
+              data-name="Layer 1"
+              viewBox="0 0 24 24"
+              width="30px"
+              height="30px"
+            >
+              <path
+                d="M3.69,7H0v-2H3.45l.24,2ZM0,13v2H4.63l-.24-2H0Zm3.92-4H0v2H4.16l-.24-2Zm17.67,6H8.65l.13,1.12c.06,.5,.49,.88,.99,.88h11.22v2H9.78c-1.52,0-2.8-1.14-2.98-2.65L5.21,2.88c-.06-.5-.49-.88-.99-.88H2V0h2.22c1.52,0,2.8,1.14,2.98,2.65l.04,.35H23.99l-2.4,12Zm-12.59,5c-1.1,0-2,.9-2,2s.9,2,2,2,2-.9,2-2-.9-2-2-2Zm9,0c-1.1,0-2,.9-2,2s.9,2,2,2,2-.9,2-2-.9-2-2-2Z"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div class="items" id="4">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe1Y2PHmrX231SxnHLVqEA3yDiTUR95tvu-zvL2Hr36Q&s"
+          />
+          <h4>BEIGE CHAIR</h4>
+          <div class="price">500$</div>
+          <button class="icon">
+            <?xml version="1.0" encoding="UTF-8"?>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              id="Layer_1"
+              data-name="Layer 1"
+              viewBox="0 0 24 24"
+              width="30px"
+              height="30px"
+            >
+              <path
+                d="M3.69,7H0v-2H3.45l.24,2ZM0,13v2H4.63l-.24-2H0Zm3.92-4H0v2H4.16l-.24-2Zm17.67,6H8.65l.13,1.12c.06,.5,.49,.88,.99,.88h11.22v2H9.78c-1.52,0-2.8-1.14-2.98-2.65L5.21,2.88c-.06-.5-.49-.88-.99-.88H2V0h2.22c1.52,0,2.8,1.14,2.98,2.65l.04,.35H23.99l-2.4,12Zm-12.59,5c-1.1,0-2,.9-2,2s.9,2,2,2,2-.9,2-2-.9-2-2-2Zm9,0c-1.1,0-2,.9-2,2s.9,2,2,2,2-.9,2-2-.9-2-2-2Z"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div class="items" id="5">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgO5cNngxBi6DYIVLidMuIzNIWsJ_UVCUbyGlHCLRfmw&s"
+          />
+          <h4>ANCIENT CHAIR</h4>
+          <div class="price">350$</div>
+          <button class="icon">
+            <?xml version="1.0" encoding="UTF-8"?>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              id="Layer_1"
+              data-name="Layer 1"
+              viewBox="0 0 24 24"
+              width="30px"
+              height="30px"
+            >
+              <path
+                d="M3.69,7H0v-2H3.45l.24,2ZM0,13v2H4.63l-.24-2H0Zm3.92-4H0v2H4.16l-.24-2Zm17.67,6H8.65l.13,1.12c.06,.5,.49,.88,.99,.88h11.22v2H9.78c-1.52,0-2.8-1.14-2.98-2.65L5.21,2.88c-.06-.5-.49-.88-.99-.88H2V0h2.22c1.52,0,2.8,1.14,2.98,2.65l.04,.35H23.99l-2.4,12Zm-12.59,5c-1.1,0-2,.9-2,2s.9,2,2,2,2-.9,2-2-.9-2-2-2Zm9,0c-1.1,0-2,.9-2,2s.9,2,2,2,2-.9,2-2-.9-2-2-2Z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="cart-tab" id="cart-tab">
+      <div class="heading2">
+        <h1>Shopping Cart</h1>
+        <span class="close">X</span>
+      </div>
+      <div class="listcart">
+        <ul></ul>
+      </div>
+      <div class="btn">
+        <p>TOTAL AMOUNT : <span class="totalamount">0</span></p>
+        <div class="button-container">
+          <button class="clear">CLEAR CART</button>
+          <button class="checkout">CHECKOUT</button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
 
