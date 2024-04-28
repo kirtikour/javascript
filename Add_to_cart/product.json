@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "chair wood",
+    "price": 200,
+    "image": "https://www.at-home.co.in/cdn/shop/products/FIACCARLESONSFACBW.jpg?v=1653041232"
+  },
+  {
+    "id": 2,
+    "name": "modren chair",
+    "price": 400,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjnVCZWQp8jkIdDqXH5NdoicoXjnDCHNWSjTLmZGUUMw&s"
+  },
+  {
+    "id": 3,
+    "name": "chair plastic",
+    "price": 300,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkNwUbq0Y0Q5OpmBzb7QYTpXfmwCFD31atqS5jt62xQA&s"
+  },
+  {
+    "id": 4,
+    "name": "Beige Chair",
+    "price": 500,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe1Y2PHmrX231SxnHLVqEA3yDiTUR95tvu-zvL2Hr36Q&s"
+  },
+  {
+    "id": 5,
+    "name": "Ancient Chair",
+    "price": 350,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgO5cNngxBi6DYIVLidMuIzNIWsJ_UVCUbyGlHCLRfmw&s"
+  }
+]
