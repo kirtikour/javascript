@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style id="light-mode">
+    body {
+      background-color: rgb(239, 239, 247);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 5px;
+    }
+    .whole-conatiner {
+      margin-top: 40px;
+      width: 320px;
+      border-radius: 0.75rem;
+      background-color: rgb(228, 228, 235);
+      padding: 2rem;
+      color: rgb(16, 16, 17);
+      position: relative; /* Added position relative */
+
+      transform-style: preserve-3d;
+      transition: transform 0.5s;
+      transform: rotateY(0deg);
+      border-radius: 10px;
+      background: linear-gradient(145deg, #b5b9bf, #d7dbe3);
+      box-shadow: 13px 13px 26px #5c5e62, -13px -13px 26px #ffffff;
+    }
+
+    .signup-container {
+      display: none;
+    }
+
+    .flipped {
+      transform: rotateY(0deg);
+    }
+
+    .field {
+      width: 90%;
+      background-color: rgb(233, 235, 241);
+      color: #110f0f;
+      padding: 0.15rem 0.5rem;
+      min-height: 40px;
+      border-radius: 4px;
+      outline: none;
+      border: 0.5px solid #242424;
+      line-height: 1.15;
+      box-shadow: -7px 7px 7px 0 rgb(0, 0, 0, 0.2);
+      margin: 5px;
+    }
+    .msg {
+      margin-top: -2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .heading {
+      font-size: large;
+      font-weight: bold;
+      text-align: center;
+      line-height: 2rem;
+    }
+    .forgot {
+      margin-top: 10px;
+      display: flex;
+      justify-content: right;
+
+      align-items: flex-end;
+      margin-bottom: 10px;
+    }
+    a {
+      /* text-decoration: none; */
+    }
+    a:visited {
+      color: rgb(202, 108, 0);
+    }
+
+    .butt {
+      display: block;
+      width: 100%;
+      background-color: rgb(224, 143, 20);
+      padding: 0.75rem;
+      text-align: center;
+      color: rgb(8, 11, 17);
+      border: none;
+      border-radius: 0.375rem;
+      font-weight: 600;
+      margin-top: 5px;
+    }
+    .signup {
+      text-align: center;
+      font-size: 1rem;
+      line-height: 1rem;
+      color: rgb(224, 143, 20);
+    }
+
+    /* The switch - the box around the slider */
+    .switch {
+      font-size: 17px;
+      position: relative;
+      display: inline-block;
+      width: 3.5em;
+      height: 2em;
+    }
+
+    /* Hide default HTML checkbox */
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    /* The slider */
+    .slider {
+      --background: #121213;
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--background);
+      transition: 0.5s;
+      border-radius: 30px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 1.4em;
+      width: 1.4em;
+      border-radius: 50%;
+      left: 10%;
+      bottom: 15%;
+      box-shadow: inset 8px -4px 0px 0px #f1f0ed;
+      background: var(--background);
+      transition: 0.5s;
+    }
+
+    input:checked + .slider {
+      background-color: #fbfbfc;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(100%);
+      box-shadow: inset 15px -4px 0px 15px #fff000;
+    }
+    .light {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+    }
+  </style>
+  <style id="dark-mode">
+    body {
+      background-color: rgba(17, 24, 39, 1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 5px;
+    }
+    .whole-conatiner {
+      margin-top: 40px;
+      width: 320px;
+      border-radius: 0.75rem;
+      background-color: rgba(17, 24, 39, 1);
+      padding: 2rem;
+      color: rgba(243, 244, 246, 1);
+      position: relative; /* Added position relative */
+
+      transform-style: preserve-3d;
+      transition: transform 0.5s;
+      transform: rotateY(0deg);
+      border-radius: 10px;
+      background: linear-gradient(145deg, #0f1623, #121a2a);
+      box-shadow: 13px 13px 26px #080b12, -13px -13px 26px #1a253c;
+    }
+    /* To initally hide the signup-conatiner */
+    .signup-container {
+      display: none;
+    }
+
+    .flipped {
+      transform: rotateY(0deg);
+    }
+
+    .field {
+      width: 90%;
+      background-color: rgba(17, 24, 39, 1);
+      color: #e4e1e1;
+      padding: 0.15rem 0.5rem;
+      min-height: 40px;
+      border-radius: 4px;
+      outline: none;
+      border: 0.5px solid #242424;
+      line-height: 1.15;
+      box-shadow: -7px 7px 7px 0 rgb(0, 0, 0, 0.2);
+      margin: 5px;
+    }
+    .msg {
+      margin-top: -2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .heading {
+      font-size: large;
+      font-weight: bold;
+      text-align: center;
+      line-height: 2rem;
+    }
+    .forgot {
+      margin-top: 10px;
+      display: flex;
+      justify-content: right;
+
+      align-items: flex-end;
+      margin-bottom: 10px;
+    }
+    a {
+      text-decoration: none;
+    }
+    a:visited {
+      color: white;
+    }
+
+    .butt {
+      display: block;
+      width: 100%;
+      background-color: rgba(167, 139, 250, 1);
+      padding: 0.75rem;
+      text-align: center;
+      color: rgba(17, 24, 39, 1);
+      border: none;
+      border-radius: 0.375rem;
+      font-weight: 600;
+      margin-top: 5px;
+    }
+    .signup {
+      text-align: center;
+      font-size: 1rem;
+      line-height: 1rem;
+      color: rgba(156, 163, 175, 1);
+    }
+
+    /* The switch - the box around the slider */
+    .switch {
+      font-size: 17px;
+      position: relative;
+      display: inline-block;
+      width: 3.5em;
+      height: 2em;
+    }
+
+    /* Hide default HTML checkbox */
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    /* The slider */
+    .slider {
+      --background: #121213;
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--background);
+      transition: 0.5s;
+      border-radius: 30px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 1.4em;
+      width: 1.4em;
+      border-radius: 50%;
+      left: 10%;
+      bottom: 15%;
+      box-shadow: inset 8px -4px 0px 0px #f1f0ed;
+      background: var(--background);
+      transition: 0.5s;
+    }
+
+    input:checked + .slider {
+      background-color: #fbfbfc;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(100%);
+      box-shadow: inset 15px -4px 0px 15px #fff000;
+    }
+    .light {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+    }
+  </style>
+  <body>
+    <div class="light">
+      <label class="switch">
+        <input
+          type="checkbox"
+          id="modeToggle"
+          onchange="toggleMode()"
+          checked
+        />
+        <span class="slider"></span>
+      </label>
+    </div>
+    <form>
+      <div class="whole-conatiner" id="whole-container">
+        <div class="container-login" id="login-container">
+          <p class="heading">LOGIN</p>
+          <div class="input-group">
+            <!-- <label for="Email">Email: </label> -->
+
+            <input
+              type="email"
+              name="email"
+              id="Email"
+              class="field"
+              placeholder="Email"
+            />
+          </div>
+
+          <div class="input-group">
+            <!-- <label for="password">Password: </label> -->
+
+            <input
+              type="password"
+              name="pass"
+              id="password"
+              class="field"
+              placeholder="Password"
+            />
+          </div>
+          <div class="forgot">
+            <a rel="noopener " href="#">Forgot Password?</a>
+          </div>
+
+          <button onclick="login()" class="butt">Sign in</button>
+          <div class="signup">
+            <p>
+              Don't Have an account?
+              <a rel="noreferrer" href="#" onclick="toggleLogin()">Sign Up</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="container signup-container" id="signup-container">
+          <p class="heading">SIGN UP</p>
+          <span class="msg" style="font-size: small; text-align: center"
+            >Hello👋--please fill the form below to create account--
+          </span>
+          <div class="input-group">
+            <!-- <label for="Email">Email: </label> -->
+            <br />
+            <input
+              type="text"
+              name="username"
+              id="username"
+              class="field"
+              placeholder="Full name"
+            />
+          </div>
+
+          <div class="input-group">
+            <!-- <label for="Email">Email: </label> -->
+
+            <input
+              type="email"
+              name="email"
+              id="Email2"
+              class="field"
+              placeholder="Email"
+            />
+          </div>
+
+          <div class="input-group">
+            <!-- <label for="password">Password: </label> -->
+
+            <input
+              type="password"
+              name="pass"
+              id="password2"
+              class="field"
+              placeholder="Password"
+            />
+          </div>
+
+          <button onclick="signup()" class="butt">Sign Up</button>
+          <div class="signup">
+            <p>
+              Already have an account?
+              <a rel="noreferrer" href="#" onclick="toggleSignup()">Login</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </form>
+  </body>
+  <script>
+    function toggleSignup() {
+      // Toggle flipped class for both containers
+      //   document.getElementById("login-container").classList.toggle("flipped");
+
+      document.getElementById("signup-container").classList.toggle("flipped");
+      document.getElementById("signup-container").style.display = "NONE";
+      document.getElementById("login-container").classList.toggle("flipped");
+      document.getElementById("login-container").style.display = "block";
+
+      // Hide the login container when signup is clicked
+    }
+    function toggleLogin() {
+      document.getElementById("login-container").classList.toggle("flipped");
+      document.getElementById("login-container").style.display = "none";
+
+      document.getElementById("signup-container").classList.toggle("flipped");
+      document.getElementById("signup-container").style.display = "block";
+    }
+
+    function login() {
+      // Implement your login logic here
+      alert("Login button clicked!");
+    }
+
+    function signup() {
+      // Implement your signup logic here
+      alert("Signup button clicked!");
+    }
+    function toggleMode() {
+      var checkbox = document.getElementById("modeToggle");
+      var lightMode = document.getElementById("light-mode");
+      var darkMode = document.getElementById("dark-mode");
+
+      if (checkbox.checked) {
+        lightMode.disabled = true;
+        darkMode.disabled = false;
+      } else {
+        lightMode.disabled = false;
+        darkMode.disabled = true;
+      }
+    }
+  </script>
+</html>
