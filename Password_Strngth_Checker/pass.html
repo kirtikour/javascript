@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>password Strength checker</title>
+  </head>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 900px;
+      margin: 50px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    input[type="password"] {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      outline: none;
+      margin-top: 20px; /* Add margin to separate password input from labels */
+      width: 80%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #level,
+    #points {
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+      margin-top: 10px;
+    }
+    label {
+      font-size: 25px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <label>password checker</label>
+      <input type="password" id="pass" placeholder="Type password Here...." />
+
+      <label id="level">No password</label>
+      <label id="points"></label>
+    </div>
+  </body>
+
+  <script>
+    let inputfield = document.getElementById("pass");
+    let point = document.getElementById("points");
+    let level = document.getElementById("level");
+    let container = document.querySelector(".container");
+
+    function assessPasswordStrength(value) {
+      let points = 0;
+
+      if (value.length < 4) {
+        point.innerText = 0;
+        level.innerText = "Very Weak";
+        container.style.backgroundColor = "white";
+        return;
+      }
+
+      points += /[A-Z]/.test(value) ? 1 : 0;
+      points += /[a-z]/.test(value) ? 1 : 0;
+      points += /[0-9]/.test(value) ? 1 : 0;
+      points += /[^A-Za-z0-9]/.test(value) ? 1 : 0;
+
+      point.innerText = points;
+
+      if (points === 1) {
+        level.innerText = "Weak";
+        container.style.backgroundColor = "RED";
+      } else if (point === 0) {
+        level.innerText = "No Password";
+        container.style.backgroundColor = "white";
+      } else if (points >= 2 && points <= 3) {
+        level.innerText = "Good";
+        container.style.backgroundColor = "orange";
+      } else if (points === 4) {
+        level.innerText = "Strong";
+        container.style.backgroundColor = "rgb(144,238,144)";
+      } else if (points === 5) {
+        level.innerText = "Very Strong";
+        container.style.backgroundColor = "green";
+      }
+    }
+
+    inputfield.addEventListener("input", function () {
+      assessPasswordStrength(inputfield.value);
+    });
+
+    inputfield.addEventListener("keydown", function (event) {
+      // Handle Backspace or Delete key press
+      if (event.key === "Backspace" || event.key === "Delete") {
+        // Delay the assessment to allow the value to be updated after the key is pressed
+        setTimeout(function () {
+          assessPasswordStrength(inputfield.value);
+        }, 0);
+      }
+    });
+
+    inputfield.addEventListener("paste", function (event) {
+      // Delay the assessment to allow the pasted value to be updated
+      setTimeout(function () {
+        assessPasswordStrength(inputfield.value);
+      }, 0);
+    });
+  </script>
+</html>
